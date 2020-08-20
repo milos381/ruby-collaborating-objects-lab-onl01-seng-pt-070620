@@ -1,6 +1,6 @@
 
 
-
+require 'pry'
 class Song
 
   @@all = []
@@ -25,8 +25,10 @@ class Song
   end
 
   def artist_name=(name)
-    self.artist = Artist.find_or_create_by_name(name)
+
+    self.artist = Artist.find_or_create_by_name(name)  #ask what is this
     artist.add_song(self)
+    binding.pry
   end
 
 end
